@@ -1,0 +1,45 @@
+<!-- has the ids (numbers only) for each concept, iterates through them and creates the page with form -->
+
+<!-- Post value encoded as 1 for like, 2 for dislike, 3 for neutral, followed by the concept id number.  Example:  the like button for concept id 5, is 15 -->
+
+<div id="concepts">
+
+
+
+        <% @unrated_concepts.each do |concept| %>
+
+
+        <div id="concept">
+        <%= "<b> #{Concept.find(concept).body} </b>" %>
+
+                <br><br>
+
+            		<form action="/concept" method="post">
+            		<input type="hidden" name="rating"
+            			value="1<%=concept%>">
+            		<input type="submit" value="Like">
+            		</form>
+
+            		<br>
+
+            		<form action="/concept" method="post">
+            		<input type="hidden" name="rating"
+            			value="2<%=concept%>">
+            		<input type="submit" value="Dislike">
+            		</form>
+
+            		<br>
+
+            		<form action="/concept" method="post">
+            		<input type="hidden" name="rating"
+            			value="3<%=concept%>">
+            		<input type="submit" value="Don't know/neutral">
+            		</form>
+
+            		<br>
+         
+         </div>   		
+
+        <% end %>
+
+</div>

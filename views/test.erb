@@ -1,0 +1,19 @@
+<!-- get logged in user --> 
+
+<% if @current_user == nil %>
+	"no user is logged in..."
+<% end %>
+
+<%= "#{@current_user.name}" %>
+
+<%= where_user_rated = @current_user.concept_users %>
+
+
+<% where_user_rated.each do |conceptuser| %>
+<%= "#{conceptuser.concept_id} <br>" %>
+<%end%>
+<!-- use the user to get their ratings in Concept User -->
+
+
+
+	

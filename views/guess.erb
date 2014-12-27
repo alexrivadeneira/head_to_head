@@ -1,0 +1,68 @@
+
+<div id="guesses">
+<!-- shows previous guesses and their outcomes -->
+
+    <% @where_user_guessed.each do |guess| %>
+        <% concept_user_rating = guess.concept_user_id %>
+
+        <% what_you_guessed_on = ConceptUser.find(concept_user_rating) %>
+        <% what_you_guessed_on_user = User.find(what_you_guessed_on.user_id).name %>
+        <% what_you_guessed_on_concept = Concept.find(what_you_guessed_on.concept_id).body %>
+        <% what_you_guessed_on_rating = what_you_guessed_on.rating %>
+
+        <% outcome = guess.outcome %>
+
+        <div id="<%=outcome%>">
+
+            <%= "#{what_you_guessed_on_user}  #{convert_rating(what_you_guessed_on_rating)} #{what_you_guessed_on_concept}. You were  #{convert_bool(outcome)}." %>
+        </div>
+
+    <% end %>
+
+</div>
+
+
+
+<div id="make_ratings">
+<!-- where the user can make more guesses -->
+
+    <% @ratings_where_user_not_rated.each do |rating| %>
+    <%	user_id = ConceptUser.find(rating).user_id %>
+    <%	username = User.find(user_id).name %>
+    <% concept_id = ConceptUser.find(rating).concept_id %>
+    <% concept_user_rating_id = ConceptUser.find(rating).id %>
+    <% concept_body = Concept.find(concept_id).body %>
+
+
+    <div id="rating">
+        <%= "#{rating}. What do you think <b>#{username}</b> thinks about <b>#{concept_body}?</b> <br><br>" %>
+
+            		<form action="/guess" method="post">
+            		<input type="hidden" name="guess"
+            			value="1--<%=concept_user_rating_id%>">
+            		<input type="submit" value="<%= username %> likes">
+            		</form>
+
+            		<br>
+
+            		<form action="/guess" method="post">
+            		<input type="hidden" name="guess"
+            			value="2--<%=concept_user_rating_id%>">
+            		<input type="submit" value="<%= username %> dislikes">
+            		</form>
+
+            		<br>
+
+            		<form action="/guess" method="post">
+            		<input type="hidden" name="guess"
+            			value="3--<%=concept_user_rating_id%>">
+            		<input type="submit" value="<%= username %> doesn't know/is neutral">
+            		</form>
+
+            		<br>
+        </div>
+        
+    <%end%>
+
+
+</div>

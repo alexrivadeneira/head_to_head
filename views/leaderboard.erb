@@ -1,0 +1,20 @@
+
+<% "#{@scores_array}" %>
+
+<% names = [] %>
+<% scores = [] %>
+
+<% @scores_array.each do |scoreset| %>
+	<% scoreset.each do |key, value| %>
+	<% names << User.find(key).name %>
+	<% scores << "#{value}%" %>
+	<%end%>
+
+<%end %> 
+
+<% count = 0 %>
+<% names.each do |name| %>
+
+	<%= "#{scores[count]} #{name} <br>" %>
+	<% count += 1 %>
+<% end %>

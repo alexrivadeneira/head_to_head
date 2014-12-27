@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="/styles.css">
+	<title>Head to Head! <%= "#{@page_name}" %></title>
+</head>
+<body>
+
+
+
+
+<div id="header">
+	<nav>
+		<ul>
+			<li> <a href="/">Home</a> </li>
+			<li> <a href="/login">Log In</a> </li>
+			<li> <a href="/signup">Sign Up</a> </li>
+			<li> <a href="/concept">Rate</a> </li>
+			<li> <a href="/group">Select Game</a> </li>
+			<li> <a href="/guess">Guess</a> </li>
+			<li> <a href="/leaderboard">Leaderboard</a> </li>
+			<li> <a href="/clear">Log Out</a> </li>
+		</ul>
+	</nav>
+</div>
+
+
+<div id="main">
+
+	<div id="errors">
+	      <% unless @errors.empty? %>
+	      <ul>
+	        <% @errors.each do |error| %>
+	          <li><%= error %></li>
+	        <% end %>
+	      </ul>
+	      <% end %>
+	</div>
+
+
+	<p> Welcome, 
+
+	<% if session[:user] == [] %>
+		Guest
+	<% else %>
+
+		
+		<% where_guessed = Guest.where user_id: @current_user.id %> 
+
+		<% attempts = where_guessed.length %>
+
+
+		<%= "#{@current_user.name} <br> You have <b>#{@current_user.points}</b> points and made #{attempts} attempts.<br>" %>
+
+		<%if Guest.where user_id: @current_user.id %>
+			<% where_guessed = Guest.where user_id: @current_user.id %> 
+
+			<%if where_guessed.length >= 1%>
+
+				<% attempts = where_guessed.length %>
+				Your average is: <b><%= ((@current_user.points.to_f / attempts) * 100).to_i%>%</b>
+			<%end%>
+
+		<%end%>
+
+	<br> You are currently playing with:
+
+	<% end %>
+
+	</p>
+
+	<h2> <%= "#{@page_name}" %> </h2>
+
+	<%= yield %>
+</div>
+</body>
+</html>
+

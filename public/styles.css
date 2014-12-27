@@ -1,0 +1,175 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0px;
+	width: 100%;
+}
+
+html{
+	font-family: 'Arvo', serif;
+}
+
+#home_main{
+	background-color: #ADADFF;
+	height: 300px;
+	width: 800px;
+	border-radius: 20px;
+	padding: 10px 10px 10px 10px;
+
+}
+
+#home_main_left{
+	width: 100%;
+
+	display: inline-block;
+	float: left;
+	text-align: right;
+
+
+}
+
+#home_main_left img{
+	width: 400px;
+	display: inline-block;
+	float: right;
+
+}
+
+
+
+
+#home_main_left p{
+	font-family: sans-serif;
+	text-align: left;
+	display: inline-block;
+	float: left;
+}
+
+#home_main_left h1{
+	text-align: left;
+	font-size: 60px;
+
+
+}
+
+
+#home_main_left h3{
+	text-align: left;
+	font-size: 30px;
+	margin-bottom: -10px;
+	margin-top: -40px;
+
+}
+
+
+
+#main{
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#header{
+	background-image: url("heads_logo_small.png");
+
+	background-repeat: no-repeat;
+	background-position: 30px 0px;
+
+	background-color: #000;
+	height: 65px;
+	width: 100%;
+
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+nav{
+	width: 100%;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+nav ul li{
+	display: inline-block;
+	border-radius: 10px;
+
+	padding: 5px 10px 5px 10px;
+	margin: 0px;
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+
+nav ul li a:hover{
+	text-decoration: none;
+	color: #f8d855;
+}
+
+
+
+#errors{
+	font-family: sans-serif;
+	color: red;
+}
+
+#true{
+
+	background-color: #9DFF7D
+;
+	display: inline-block;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	width: 30%;
+	border-radius: 15px;
+}
+
+#false{
+	background-color: #CC8080;
+	display: inline-block;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	width: 30%;
+	border-radius: 15px;
+}
+
+
+#guesses{
+
+	border-radius: 15px;
+}
+
+#make_ratings{
+	border-radius: 15px;
+}
+
+#rating{
+
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 15px;
+	background-color: #ADADFF;
+}
+
+
+
+
+
+
+#concept{
+
+	background-color: #ADADFF;
+	display: inline-block;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	width: 30%;
+	border-radius: 15px;
+}
