@@ -140,7 +140,7 @@ nav ul li a:hover{
 	display: inline-block;
 	margin: 10px 10px 10px 10px;
 	padding: 10px 10px 10px 10px;
-	width: 30%;
+	width: 70%;
 	border-radius: 15px;
 }
 
@@ -149,17 +149,24 @@ nav ul li a:hover{
 	display: inline-block;
 	margin: 10px 10px 10px 10px;
 	padding: 10px 10px 10px 10px;
-	width: 30%;
+	width: 70%;
 	border-radius: 15px;
 }
 
 
 #guesses{
-
+	display: inline-block;
+	float: right;
+	width: 40%;
 	border-radius: 15px;
 }
 
+
+
 #make_ratings{
+	display: inline-block;
+	float: left;
+	width: 60%;
 	border-radius: 15px;
 }
 
