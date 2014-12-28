@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
 require 'bcrypt'
-require 'pry'
+
 
 require_relative './models/user.rb'
 require_relative './models/concept_user.rb'
@@ -163,7 +163,7 @@ end
 
 get '/leaderboard' do
 	@page_name = "Leaderboard"
-	all_users_leaderboard = User.all
+	all_users_leaderboard = User.allå
 
 	@scores_array = []
 
