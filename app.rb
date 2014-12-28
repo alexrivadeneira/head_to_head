@@ -163,7 +163,7 @@ end
 
 get '/leaderboard' do
 	@page_name = "Leaderboard"
-	all_users_leaderboard = User.allå
+	all_users_leaderboard = User.all
 
 	@scores_array = []
 
