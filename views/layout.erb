@@ -25,54 +25,9 @@
 </div>
 
 
-<div id="main">
-
-	<div id="errors">
-	      <% unless @errors.empty? %>
-	      <ul>
-	        <% @errors.each do |error| %>
-	          <li><%= error %></li>
-	        <% end %>
-	      </ul>
-	      <% end %>
-	</div>
-
-
-	<p> Welcome, 
-
-	<% if session[:user] == [] %>
-		Guest
-	<% else %>
-
-		
-		<% where_guessed = Guest.where user_id: @current_user.id %> 
-
-		<% attempts = where_guessed.length %>
-
-
-		<%= "#{@current_user.name} <br> You have <b>#{@current_user.points}</b> points and made #{attempts} attempts.<br>" %>
-
-		<%if Guest.where user_id: @current_user.id %>
-			<% where_guessed = Guest.where user_id: @current_user.id %> 
-
-			<%if where_guessed.length >= 1%>
-
-				<% attempts = where_guessed.length %>
-				Your average is: <b><%= ((@current_user.points.to_f / attempts) * 100).to_i%>%</b>
-			<%end%>
-
-		<%end%>
-
-	<br> You are currently playing with the <b> <%= @current_user.group %> Group.</b>
-
-	<% end %>
-
-	</p>
-
-	<h2> <%= "#{@page_name}" %> </h2>
-
 	<%= yield %>
-</div>
+
+
 </body>
 </html>
 
