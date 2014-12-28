@@ -202,6 +202,20 @@ get '/guess' do
 	@page_name = "Guess what others think..."
 
 
+	# get the User's group
+	# get each person in the user's group, and get each of their concept user items
+
+	@user_group = @current_user.group
+
+	@users_in_users_group = User.where(group: @user_group)
+	# figure out way to show concept_user items for these people ONLY
+
+	@users_in_users_group_ids = []
+	# get the user id for each user in the user's group
+
+	@users_in_users_group.each do |user|
+		@users_in_users_group_ids << user.id 
+	end
 
 	# all the ConceptUser items associated with the user
 	@where_user_rated = @current_user.concept_users 
@@ -229,7 +243,10 @@ get '/guess' do
 
 
 	# get all of the conceptuser (ratings) items
-	@all_ratings = ConceptUser.all
+
+
+	@all_ratings = ConceptUser.where(:user_id => @users_in_users_group_ids)
+
 
 	@all_ratings_id = []
 
