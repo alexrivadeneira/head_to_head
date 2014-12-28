@@ -11,6 +11,18 @@ html{
 	font-family: 'Arvo', serif;
 }
 
+#message{
+	color: white;
+	background-color: red;
+	font-size: 20px;
+
+	width: 800px;
+	border-radius: 20px;
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 10px;
+
+}
+
 #home_main{
 	background-color: #ADADFF;
 	height: 300px;

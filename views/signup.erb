@@ -1,3 +1,13 @@
+<div id="message">
+  Some notes about Sign Up: 
+
+  <p>If you don't want to use your real email address, you can make up a fake email address.  The email field is used as your unique idenitifer, so just make sure you remember what you use to sign up.</p>
+
+  <p>Currently you have to select a group to play with from a pre-made list.  Please choose the group that applies to you--I think the group names are self explanatory. In the future, I hope to allow users to create and switch between multiple groups.</p>
+
+  <p>-- Alex</p>
+</div>
+
 <form action="/signup" method="post">
 
   <% if @user.present? && @user.errors.any? %>
