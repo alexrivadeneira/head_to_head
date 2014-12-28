@@ -83,11 +83,9 @@
 
 
 <script>
-$('#guesses > #true' ).each(function() {
+$('#guesses > #true #false' ).each(function() {
     $(this).prependTo(this.parentNode);
 });
 
-$('#guesses > #false' ).each(function() {
-    $(this).prependTo(this.parentNode);
-});
+
 </script>
